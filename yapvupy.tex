@@ -1,0 +1,122 @@
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{extarticle}
+\usepackage[a4paper, top=20mm, left=30mm, right=10mm, bottom=20mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage{misccorr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtext}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{listings}
+\usepackage{color}
+\lstdefinestyle{mystyle}{
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	keywordstyle=\color{black},
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\MakeUppercase{Министерство науки и высшего образования Российской Федерации} \\
+\MakeUppercase{ФГБОУ ВО АЛТАЙСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ}
+\vfill
+\textsc{Институт цифровых технологий, электроники и физики} \\
+
+\textsc{Кафедра вычислительной техники и электроники (ВТиЭ)}
+\vfill
+\textsc{Лабораторная работа №6} \\
+\textbf{Разработка графической программы, моделирующую солнечную систему}
+\bigskip
+
+\end{center}
+\vfill
+
+\newlength{\ML}
+\settowidth{\ML}{«\underline{\hspace{0.7cm}}» \underline{\hspace{1cm}}}
+\hfill\begin{minipage}{0.5\textwidth}
+Выполнил студент 506 гр.\\
+\underline{\hspace{4cm}} П.\,А.~Дмуха\\
+\end{minipage}%
+
+\hfill\begin{minipage}{0.5\textwidth}
+Проверил к.т.н, доцент каф. ВТиЭ\\
+\underline{\hspace{4cm}} И.\,А.~Шмаков\\
+Лабораторная работа защищена\\
+«\underline{\hspace{0.7cm}}» \underline{\hspace{4cm}} \the\year~г. \\
+Оценка \underline{\hspace{3.6cm}}
+\end{minipage}%
+\vfill
+
+\begin{center}
+Барнаул, \the\year~г.
+\end{center}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Глава 1}
+\subsection{Постановка задачи}
+
+\subsection{Что использовали}
+Pygame, math. pygame это набор модулей языка программирования Python, предназначенный для написания компьютерных игр и мультимедиа-приложений. Pygame базируется на мультимедийной библиотеке SDL.\\
+В сердце каждой игры лежит цикл, который принято называть «игровым циклом». Он запускается снова и снова, делая все, чтобы работала игра. Каждый цикл в игре называется кадром.
+
+В каждом кадре происходит масса вещей, но их можно разбить на три категории:
+
+Обработка ввода (события)
+Речь идет обо всем, что происходит вне игры — тех событиях, на которые она должна реагировать. Это могут быть нажатия клавиш на клавиатуре, клики мышью и так далее.
+
+Обновление игры
+Изменение всего, что должно измениться в течение одного кадра. Если персонаж в воздухе, гравитация должна потянуть его вниз. Если два объекта встречаются на большой скорости, они должны взорваться.
+
+Рендеринг (прорисовка)
+В этом шаге все выводится на экран: фоны, персонажи, меню. Все, что игрок должен видеть, появляется на экране в нужном месте.
+
+Время
+
+Еще один важный аспект игрового цикла — скорость его работы. Многие наверняка знакомы с термином FPS, который расшифровывается как Frames Per Second (или кадры в секунду). Он указывает на то, сколько раз цикл должен повториться за одну секунду. Это важно, чтобы игра не была слишком медленной или быстрой. Важно и то, чтобы игра не работала с разной скоростью на разных ПК. Если персонажу необходимо 10 секунд на то, чтобы пересечь экран, эти 10 секунд должны быть неизменными для всех компьютеров.
+
+
+Модуль Math в Python.
+Python библиотека math содержит наиболее применяемые математические функции и константы. Все вычисления происходят на множестве вещественных чисел. 
+
+
+\section{Глава 2}
+\subsection{Парадигма}
+
+\subsection{Выбранные параметры}
+
+\section{Глава 3. Вывод}
+
+
+
+\newpage
+\section*{Приложение}
+\subsection*{Текст программы:}
+\begin{lstlisting}[language=C++]
+
+\end{lstlisting}
+\subsection*{Ссылка на гит}
+\end{document}
