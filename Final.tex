@@ -1,0 +1,263 @@
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{extarticle}
+\usepackage[a4paper, top=20mm, left=30mm, right=10mm, bottom=20mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage{misccorr}
+\usepackage{graphicx}
+\graphicspath{{noiseimages/}}
+\usepackage{amsmath}
+\usepackage{mathtext}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{listings}
+\usepackage{color}
+\lstdefinestyle{mystyle}{
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	keywordstyle=\color{black},
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumi}{\arabic{enumi}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\MakeUppercase{Министерство науки и высшего образования Российской Федерации} \\
+\MakeUppercase{ФГБОУ ВО АЛТАЙСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ}
+\vfill
+\textsc{Институт цифровых технологий, электроники и физики} \\
+
+\textsc{Кафедра вычислительной техники и электроники (ВТиЭ)}
+\vfill
+\textsc{Лабораторная работа №6} \\
+\textbf{Разработка графической программы, моделирующую солнечную систему}
+\bigskip
+
+\end{center}
+\vfill
+
+\newlength{\ML}
+\settowidth{\ML}{«\underline{\hspace{0.7cm}}» \underline{\hspace{1cm}}}
+\hfill\begin{minipage}{0.5\textwidth}
+Выполнили студенты 506 гр.\\
+\underline{\hspace{4cm}} П.\,А.~Дмуха\\
+\underline{\hspace{4cm}} В.\,С.~Маркевцев\\
+\underline{\hspace{4cm}} Ф.\,С.~Калугарев\\
+\end{minipage}%
+
+\hfill\begin{minipage}{0.5\textwidth}
+Проверил к.т.н, доцент каф. ВТиЭ\\
+\underline{\hspace{4cm}} И.\,А.~Шмаков\\
+Лабораторная работа защищена\\
+«\underline{\hspace{0.7cm}}» \underline{\hspace{4cm}} \the\year~г. \\
+Оценка \underline{\hspace{3.6cm}}
+\end{minipage}%
+\vfill
+
+\begin{center}
+Барнаул, \the\year~г.
+\end{center}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Содержание}
+\addcontentsline{toc}{section}{Foo and Bar}
+1. Введение
+
+2. Постоновка задачи
+
+3. Чт использовали
+
+4. Парадигма
+
+5. Разработка
+
+6. Выбранные параметры
+
+7. Вывод
+
+8. Приложение
+\section*{Введение}
+\addcontentsline{toc}{section}{Foo and Bar}
+Участники: Дмуха Павел - лидер проекта.Задачей является задать идею проекта, написать отчет и решать вопросы по программе. Калугарев Фёдр - тестировщик. Задачей является проверка работоспособности программы и нахождением ошибок внутри нее. Маркевцев Влад - разработчик.Задачей является писать код программы.
+
+В качестве парадигмы мы решили использовать процедурное программирование, так как оно является наиболее эфективным и простым для написания программы с использованием модуля vpython.Императивное
+программирование описывает расчет с помощью последовательности команд и определяет
+точную процедуру решения задачи.
+\section{Глава 1}
+\subsection{Постановка задачи}
+Написать программу, моделирующую солнечную систему, содержащуюю информацию о планетах. Планеты должны двигаться по орбитам; cкорость движения планеты должна регулироваться; движения планет в программе должно быть взаимосвязано.
+\subsection{Что использовали}
+ vpython, math. Для реализации программы в 3D нам потребовался модуль vpython. VPython позволяет пользователям создавать объекты, такие как сферы и конусы, в 3D-пространстве и отображать эти объекты в окне. Это облегчает создание простых визуализаций, позволяя программистам больше сосредоточиться на вычислительном аспекте своих программ.
+
+Модуль Math в Python.\\
+Math является самым базовым математическим модулем Python. Охватывает основные математические операции, такие как сумма, экспонента, модуль и так далее. Эта библиотека не используется при работе со сложными математическими операциями, такими как умножение матриц. Расчеты, выполняемые с помощью функций библиотеки math, также выполняются намного медленнее. Тем не менее, эта библиотека подходит для выполнения основных математических операций.
+
+
+\section{Глава 2}
+\subsection{Парадигма}
+Процедурный Стиль программирования — это программирование, основанное на использовании процедур:
+Процедурное программирование — программирование на императивном языке, при котором последовательно выполняемые операторы можно собрать в подпрограммы, то есть более крупные целостные единицы кода, с помощью механизмов самого языка.
+
+Процедурное программирование является отражением архитектуры традиционных ЭВМ, которая была предложена Фон Нейманом в 1940-х годах.
+
+Теоретической моделью процедурного программирования служит абстрактная вычислительная система под названием машина Тьюринга.
+
+Основные сведения
+Выполнение программы сводится к последовательному выполнению операторов с целью преобразования исходного состояния памяти, то есть значений исходных данных, в заключительное, то есть в результаты.
+
+Таким образом, с точки зрения программиста имеются программа и память, причём первая последовательно обновляет содержимое последней.
+
+Процедурный язык программирования предоставляет возможность программисту определять каждый шаг в процессе решения задачи. Особенность таких языков программирования состоит в том, что задачи разбиваются на шаги и решаются шаг за шагом.
+
+Используя процедурный язык, программист определяет языковые конструкции для выполнения последовательности алгоритмических шагов.
+\subsection{Разработка}
+Что мы сделали? Мы добавили в программу данные о планетах и о их взаимосвязи с солнцем: массу каждой планеты в килограммах, среднее расстояние от Солнца до каждой из планет, записвали формулы гравитационной силы между солнцем и планетами и уголовую скорость для каждой планеты. Создали сами планеты с их радиусом и поставили их внужном порядке.Сделали так, чтобы они врощались вокруг солнца.
+\label{sec:longtermgoals}
+\subsection{Выбранные параметры}
+\begin{itemize}
+\item 1.9885e30   масса Солнца, кг
+\item 5.97e24   масса Земли, кг
+\item 3.33e23  масса Меркурия,кг
+\item 1.89e27  масса Юпитера, кг
+\item 1.02e26  масса Нептуна, кг
+\item 5.68E26  масса Сатурна, кг
+\item 8917  масса Урана, кг
+\item 6.42e24  масса Марса, кг
+\item 4.87e24  масса Венеры, кг
+\item 1.08E11 среднее растояние от Солнца до Венеры, метры 
+\item  2.28e11 среднее растояние от Солнца до Марса, метры 
+\item  1.496e11   среднее расстояние от Солнца до Земли, метры
+\item  0.58e11  среднее расстояние от Солнца до Меркурия, метры
+\item  7.8e11   среднее расстояние от Солнца до Юпитера, метры
+\item  4.55e12   среднее расстояние от Солнца до Нетуна, метры
+\item  2.8E12  среднее расстояние от Солнца до Урана, метры
+\item  1.42E12  среднее расстояние от Солнца до Сатурана, метры
+\end{itemize}
+\label{sec:longtermgoals}
+
+\section{Вывод}
+В ходе лабораторной работы научились работать в команде на платформе github, научились пользоваться модулем vpython для разработки графической программы. Написали программу моделирующую солнечную систему. 
+
+
+\newpage
+\section*{Приложение}
+\subsection*{Текст программы:}
+\begin{lstlisting}[language=python]
+from vpython import sphere, vector, color, rotate
+import math
+
+
+G = 6.667e-11 
+MS = 1.9885e30  
+ME = 5.97e24  
+Mm = 3.33e23 
+MY = 1.89e27
+MN = 1.02e26 
+Ms = 5.68E26
+MU = 8917 
+MM = 6.42e24 
+MV = 4.87e24
+RSV = 1.08E11 
+RSM = 2.28e11 
+RSE = 1.496e11  
+RSm = 0.58e11 
+RSY = 7.8e11 
+RSN = 4.55e12 
+RSU = 2.8E12 
+RSs = 1.42E12 
+
+
+F_SU = G*MS*MU/(RSU*RSU)
+
+F_Ss = G*MS*Ms/(RSs*RSs)
+
+F_SY = G*MS*MY/(RSY*RSY)
+
+F_SN = G*MS*MN/(RSN*RSN)
+
+F_Sm = G*MS*Mm/(RSm*RSm)
+
+F_SE = G*MS*ME/(RSE*RSE)
+
+F_SM = G*MS*MM/(RSM*RSM)
+
+F_SV = G*MS*MV/(RSV*RSV)
+
+
+
+wy = 10*math.sqrt(F_SY/(MY*RSY))
+
+wn = 10*math.sqrt(F_SN/(MN*RSN))
+
+wu = 10*math.sqrt(F_SU/(MU*RSU))
+
+wS = 10*math.sqrt(F_Ss/(Ms*RSs))
+
+wM = 10*math.sqrt(F_Sm/(Mm*RSm))
+
+we = 10*math.sqrt(F_SE/(ME*RSE))
+
+wm = 10*math.sqrt(F_SM/(MM*RSM))
+
+wv = 10*math.sqrt(F_SV/(MV*RSV))
+
+
+
+v = vector(0.5, 0, 0)
+Ypiter = sphere(pos=vector(6,0,0), color=color.white,radius=.40, make_trail=True)
+Uran = sphere(pos=vector(8,0,0), color=color.blue,radius=.20, make_trail=True)
+saturn = sphere(pos=vector(7,0,0), color=color.red,radius=.35, make_trail=True)
+Neptun = sphere(pos=vector(9,0,0), color=color.blue,radius=.19, make_trail=True)
+Merkury = sphere(pos=vector(2,0,0), color=color.orange,radius=.18, make_trail=True)
+Venera = sphere(pos=vector(3,0,0), color=color.white,radius=.23, make_trail=True)
+Mars = sphere(pos=vector(5,0,0), color=color.red,radius=.25, make_trail=True)
+Eearth = sphere(pos=vector(4, 0, 0), color=color.blue, radius=.25, make_trail=True)
+Sun = sphere(pos=vector(0, 0, 0), color=color.yellow, radius=1)
+
+dt = 10
+
+theta_earth = we*dt
+theta_ypiter = wy*dt
+theta_neptun = wn*dt
+theta_uran = wu*dt
+theta_saturn = wS*dt
+theta_merkury = wM*dt
+theta_mars = wm*dt
+theta_venera = wv*dt
+while dt <= 86400*365:
+	Ypiter.pos = rotate(Ypiter.pos, angle=theta_ypiter)
+	Neptun.pos = rotate(Neptun.pos, angle=theta_neptun)
+	Uran.pos = rotate(Uran.pos, angle=theta_uran)
+	saturn.pos = rotate(saturn.pos, angle=theta_saturn)
+	Merkury.pos = rotate(Merkury.pos, angle=theta_merkury)
+	Mars.pos = rotate(Mars.pos, angle=theta_mars)
+	Venera.pos = rotate(Venera.pos, angle=theta_venera) 
+	Eearth.pos = rotate(Eearth.pos, angle=theta_earth,)
+\end{lstlisting}
+\subsection*{Ссылки на использованную литературу}
+--------------------------------------------------------------------------------\\
+\href{https://en.wikipedia.org/wiki/VPython}\\
+\href{https://bookflow.ru/matematicheskie-biblioteki-python/}\\
+\href{https://habr.com/ru}\\
+\subsection*{Ссылка на гит}
+\href{https://github.com/homeboyfeech/Space}
+\end{document}
